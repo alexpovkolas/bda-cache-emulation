@@ -1,0 +1,18 @@
+#IncludeRegexLine: ^[ 	]*[#%][ 	]*(include|import)[ 	]*[<"]([^">]+)([">])
+
+#IncludeRegexScan: ^.*$
+
+#IncludeRegexComplain: ^$
+
+#IncludeRegexTransform: 
+
+/Users/alex/study/Cache-emulation/Cache.cpp
+Cache.h
+/Users/alex/study/Cache-emulation/Cache.h
+
+/Users/alex/study/Cache-emulation/Cache.h
+vector
+-
+ctime
+-
+
