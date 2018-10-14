@@ -1,6 +1,5 @@
 #include <iostream>
 #include <vector>
-#include <ctime>
 #include <iostream>
 
 class Cache {
@@ -8,7 +7,8 @@ class Cache {
     int associativity;
     int line_size;
     int bank_lines_count;
-    std::vector<std::time_t> time;
+    int tick;
+    std::vector<int> time;
     std::vector<int> lines;
 public:
     Cache(int cache_size, int associativity, int line_size);
@@ -18,20 +18,19 @@ public:
 Cache::Cache(int cache_size, int associativity, int line_size):
         cache_size(cache_size), associativity(associativity),
         line_size(line_size), bank_lines_count(cache_size / line_size / associativity),
-        lines(cache_size/line_size, -1), time(cache_size/line_size) {}
+        lines(cache_size/line_size, -1), time(cache_size/line_size, 0), tick(0) {}
 
 
 bool Cache::get_addr(int addr) {
-    int cache_line = addr / line_size;
-    int group = cache_line % bank_lines_count;
-    std::time_t now = std::time(0);
-    std::time_t oldest_line_time = now;
-    int oldest_line_index = 0;
+    int line_number = addr / line_size;
+    int bank_line_number = line_number % bank_lines_count;
+    int oldest_line_time = tick + 1;
+    int oldest_line_index = -1;
     for (int i = 0; i < associativity; ++i) {
-        int index = bank_lines_count * i + group;
-        int cached_line = lines[index];
-        if (cached_line == cache_line) {
-            time[index] = now;
+        int index = bank_lines_count * i + bank_line_number;
+        int cached_line_number = lines[index];
+        if (cached_line_number == line_number) {
+            time[index] = tick++;
             return true;
         }
         if (time[index] < oldest_line_time) {
@@ -40,8 +39,8 @@ bool Cache::get_addr(int addr) {
         }
     }
 
-    lines[oldest_line_index] = cache_line;
-    time[oldest_line_index] = now;
+    lines[oldest_line_index] = line_number;
+    time[oldest_line_index] = tick++;
     return false;
 }
 
@@ -67,6 +66,7 @@ int main() {
     }
 
     cout << hit_count << " " << misses_count << std::endl;
+
 
     return 0;
 }
