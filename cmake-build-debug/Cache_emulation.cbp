@@ -82,12 +82,6 @@
 				</MakeCommands>
 			</Target>
 		</Build>
-		<Unit filename="/Users/alex/study/Cache-emulation/Cache.cpp">
-			<Option target="Cache_emulation"/>
-		</Unit>
-		<Unit filename="/Users/alex/study/Cache-emulation/Cache.h">
-			<Option target="Cache_emulation"/>
-		</Unit>
 		<Unit filename="/Users/alex/study/Cache-emulation/main.cpp">
 			<Option target="Cache_emulation"/>
 		</Unit>

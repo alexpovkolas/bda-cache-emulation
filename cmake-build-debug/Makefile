@@ -123,33 +123,6 @@ Cache_emulation/fast:
 	$(MAKE) -f CMakeFiles/Cache_emulation.dir/build.make CMakeFiles/Cache_emulation.dir/build
 .PHONY : Cache_emulation/fast
 
-Cache.o: Cache.cpp.o
-
-.PHONY : Cache.o
-
-# target to build an object file
-Cache.cpp.o:
-	$(MAKE) -f CMakeFiles/Cache_emulation.dir/build.make CMakeFiles/Cache_emulation.dir/Cache.cpp.o
-.PHONY : Cache.cpp.o
-
-Cache.i: Cache.cpp.i
-
-.PHONY : Cache.i
-
-# target to preprocess a source file
-Cache.cpp.i:
-	$(MAKE) -f CMakeFiles/Cache_emulation.dir/build.make CMakeFiles/Cache_emulation.dir/Cache.cpp.i
-.PHONY : Cache.cpp.i
-
-Cache.s: Cache.cpp.s
-
-.PHONY : Cache.s
-
-# target to generate assembly for a file
-Cache.cpp.s:
-	$(MAKE) -f CMakeFiles/Cache_emulation.dir/build.make CMakeFiles/Cache_emulation.dir/Cache.cpp.s
-.PHONY : Cache.cpp.s
-
 main.o: main.cpp.o
 
 .PHONY : main.o
@@ -186,9 +159,6 @@ help:
 	@echo "... rebuild_cache"
 	@echo "... edit_cache"
 	@echo "... Cache_emulation"
-	@echo "... Cache.o"
-	@echo "... Cache.i"
-	@echo "... Cache.s"
 	@echo "... main.o"
 	@echo "... main.i"
 	@echo "... main.s"

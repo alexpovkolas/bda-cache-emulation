@@ -3,4 +3,4 @@ project(Cache_emulation)
 
 set(CMAKE_CXX_STANDARD 14)
 
-add_executable(Cache_emulation main.cpp Cache.cpp Cache.h)
+add_executable(Cache_emulation main.cpp)

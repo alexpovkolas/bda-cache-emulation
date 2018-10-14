@@ -6,13 +6,13 @@
 
 #IncludeRegexTransform: 
 
-/Users/alex/study/Cache-emulation/Cache.cpp
-Cache.h
-/Users/alex/study/Cache-emulation/Cache.h
-
-/Users/alex/study/Cache-emulation/Cache.h
+/Users/alex/study/Cache-emulation/main.cpp
+iostream
+-
 vector
 -
 ctime
+-
+iostream
 -
 
